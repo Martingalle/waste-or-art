@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<title>Waste or Art? - THE GAME</title>
+
+<meta property="fb:app_id" content="323218128902" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.martindescours/fr/waste-or-art" />
+<meta property="og:title" content="Waste or Art - THE GAME" />
+<meta property="og:site_name" content="Waste or Art - THE GAME" />
+<meta name="description" content="Art is getting weirder every day... Can you make the difference between waste and art ?" />
+<meta property="og:description" content="Art is getting weirder every day... Can you make the difference between waste and art ?" />
+<meta property="og:image" content="img/duchamp.jpg" />
+
+<meta id="meta-viewport" name="viewport" content="">
+
+<link rel="image_src" href="img/logo.png" />
+<link rel="shortcut icon" href="http://d28gdln4v69dk9.cloudfront.net/extensions/labs/sites/pof/images/favicon.ico" type="image/x-icon" />
+<link rel="canonical" href="http://www.martindescours/fr/waste-or-art" />
+
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-27284356-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css?v=53" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css?v=53" rel="stylesheet" type="text/css" />
+<link href="CSS/1.css" rel="stylesheet" type="text/css" />
+<link href="CSS/2.css" rel="stylesheet" type="text/css" />
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://www.nssmag.com/labs/pof">
+
+<script type="text/javascript">
+(function() {
+var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+ga.src = ("https:" == document.location.protocol ? "https://" : "http://") + "stats.g.doubleclick.net/dc.js";
+var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</head>
+
+<body >
+
+
+<div id="game-wrapper" class="intro">
+
+	<div id="logo">
+		<a href="http://www.nssmag.com/labs/pof/">
+			<img src="img/logo.png" />
+		</a>
+
+		<div id="logo-before-start">
+			<h3>Can you distinguish art from waste ?</h3>
+			<a id="button-start" href="javascript:pof.labs.ui.start();" class="button">Have a try!</a>
+			<div class="spacer" style="height:40px;"></div>
+			<p style="color:#999"><strong>DISCLAIMER</strong>&nbsp;We do not own any right on any image on this website, <strong>we found them online</strong>.</p>
+		</div>
+
+		<div id="logo-finished">
+			<h3>You scored</h3>
+			<h2><span id="score"></span>&nbsp;/&nbsp;40</h2>
+			<div id="score-1" class="score" style="display:none;">Ehi! You could do better... maybe you have to visit more Art Show... or not.</div>
+			<div id="score-2" class="score" style="display:none;">Quite good. A little bit more art exhibition and you can become an expert.</div>
+			<div id="score-3" class="score" style="display:none;">You are a genius. you know your field and must be someone a very happy person, or a very maniac one !</div>
+			<div class="spacer"></div>
+			<a id="button-restart" href="javascript:pof.labs.ui.restart();" class="button">Retry!</a>
+			<div class="spacer" style="height:50px;"></div>
+			<h3 style="margin-bottom:20px;">Enjoyed this game? Like it and share it!</h3>
+			<div class="logo-share">
+				<div class="fb-like" data-href="http://www.facebook.com/creativecommunication" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false" data-width="130"></div>
+				<div class="fb-share-button" data-href="http://www.nssmag.com/fashion-or-porn" data-width="150" data-type="button_count"></div>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.nssmag.com/fashion-or-porn" data-text="Waste or Art? Are you able to distinguish them?" data-via="nssmag" data-hashtags="fashionorporn">Tweet</a>
+				<a href="https://twitter.com/youmind_it" class="twitter-follow-button" data-show-count="false">Follow @youmind_it</a>
+			</div>
+			<div class="spacer" style="height:50px;"></div>
+			<p>Proudly brought to you by art creativity lovers at <a href="http://www.youmindit.net">youmindit.net</a>.</p>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+	<div id="game">
+
+		<h1 id="art" class="result" style="display:none;">Art</h1>
+		<h1 id="waste" class="result" style="display:none;">Waste</h1>
+
+		<div id="game-buttons">
+			<a id="art-button" href="javascript:pof.labs.ui.answer('art');" class="button button-answer pull-left">
+				Art
+			</a>
+			<a id="next" href="javascript:pof.labs.ui.next();" class="button pull-left" style="display:none;">
+				Next
+			</a>
+			<a id="waste-button" href="javascript:pof.labs.ui.answer('waste');" class="button button-answer pull-right">
+				Waste
+			</a>
+
+			<div class="counter">
+				<span id="slide">1</span>&nbsp;/&nbsp;40
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+	</div>
+
+	<div id="loader"></div>
+
+</div>
+
+<img id="preloader" />
+
+<script type="text/javascript">
+var _preloadedSlides = [
+{"id":"1","photo":"w1a.png","covered":"w1b.png","answer":"ART","cible":"www.google.com"},
+{"id":"2","photo":"w2a.png","covered":"w2b.png","answer":"ART","cible":"www.google.com"},
+{"id":"3","photo":"w3a.png","covered":"w3b.png","answer":"WASTE","cible":"www.google.com"},
+{"id":"4","photo":"w4a.png","covered":"w4b.png","answer":"ART","cible":"www.google.com"},
+{"id":"5","photo":"w5a.png","covered":"w5b.png","answer":"WASTE","cible":"www.google.com"},
+{"id":"6","photo":"w6a.png","covered":"w6b.png","answer":"ART","cible":"www.google.com"},
+{"id":"7","photo":"w7a.png","covered":"w7b.png","answer":"ART","cible":"www.google.com"},
+{"id":"8","photo":"w8a.png","covered":"w8b.png","answer":"ART","cible":"www.google.com"},
+{"id":"9","photo":"w9a.png","covered":"w9b.png","answer":"ART","cible":"www.google.com"},
+{"id":"10","photo":"w10a.png","covered":"w10b.png","answer":"ART","cible":"www.google.com"},
+
+];
+</script>
+
+
+<script id="overlayMsg" type="text/x-jquery-tmpl">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-body overlay-msg">
+			<div class="alert alert-info">
+				<i class="fa fa-spinner fa-spin"></i>
+				{{html message}}
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+</script>
+
+<script id="overlayAlert" type="text/x-jquery-tmpl">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3>${title}</h3>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-body overlay-msg">
+			<div class="alert alert-danger">
+				<i class="fa fa-warning"></i>
+				{{html message}}
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">{{html b.l.get('JS_GENERIC_CLOSE')}}</a>
+		</div>
+	</div>
+</div>
+</script>
+
+<!-- <script id="overlayWarning" type="text/x-jquery-tmpl">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3>${title}</h3>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-body overlay-msg">
+			<div class="alert alert-warning">
+				<i class="fa fa-warning"></i>
+				{{html message}}
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">{{html b.l.get('JS_GENERIC_CLOSE')}}</a>
+		</div>
+	</div>
+</div>
+</script> -->
+
+<script id="overlaySuccess" type="text/x-jquery-tmpl">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3>${title}</h3>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-body overlay-msg">
+			<div class="alert alert-success">
+				<i class="fa fa-check-square"></i>
+				{{html message}}
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">{{html b.l.get('JS_GENERIC_CLOSE')}}</a>
+		</div>
+	</div>
+</div>
+</script>
+
+<script id="overlayConfirm" type="text/x-jquery-tmpl">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3>${title}</h3>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-body overlay-msg">
+			<div class="info">
+				{{html message}}
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-footer">
+			<a class="btn btn-success" onclick="${yes}"><i class="fa fa-check"></i> ${yesmsg}</a>
+			<a class="btn btn-danger" onclick="${no}"><i class="fa fa-ban"></i> ${nomsg}</a>
+		</div>
+	</div>
+</div>
+</script>
+
+<script id="overlayChoice" type="text/x-jquery-tmpl">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3>${title}</h3>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-body overlay-msg">
+			<div class="info">
+				{{html message}}
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-footer">
+			{{each(i,choice) choices}}
+			<a class="btn" onclick="${choice.action}">{{if choice.icon}}<i class="fa fa-${choice.icon}"></i> {{/if}}${choice.title}</a>
+			{{/each}}
+		</div>
+	</div>
+</div>
+</script>
+
+<script id="overlayEmpty" type="text/x-jquery-tmpl">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3>${title}</h3>
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-body overlay-msg">
+			{{html content}}
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">{{html b.l.get('JS_GENERIC_CLOSE')}}</a>
+		</div>
+	</div>
+</div>
+</script>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js?v=53"></script>
+<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="js/b.core.js"></script>
+<script type="text/javascript" src="js/b.ui.js"></script>
+<script type="text/javascript" src="js/b.auth.js"></script>
+<script type="text/javascript" src="js/pof.labs.ui.js"></script>
+
+
+
+<script type="text/javascript">
+jQuery.namespace('b');
+b.version = '53';
+/* Urls */
+b.mainUrl = 'http://www.nssmag.com';
+b.baseUrl = 'http://www.nssmag.com/labs/pof';
+b.rootUrl = '/labs/pof';
+b.subUrl = '';
+b.assetspath = 'http://d28gdln4v69dk9.cloudfront.net';
+b.datapath = 'http://dgre2y2ix4k3u.cloudfront.net';
+b.imagespath = './';
+/* Session */
+b.user = '';
+/* Navigation */
+b.activeExtension = 'labs';
+b.activeSite = 'pof';
+/* Locales */
+b.languages = [{"id":"50","language":"EN","fulltitle":"English - United States","title":"English","used":"1","isDefault":false,"isMainDefault":false},{"id":"76","language":"IT","fulltitle":"Italian - Italy","title":"Italian","used":"1","isDefault":true,"isMainDefault":true}];
+b.languagesCodes = ["EN","IT"];
+b.availableLanguages = [{"id":"50","language":"EN","fulltitle":"English - United States","title":"English","used":"1","isDefault":false,"isMainDefault":false}];
+b.language = 'EN';
+b.defaultLanguage = 'IT';
+/* Device */
+b.deviceIsMobile = 0;
+b.isMobile = 0;
+b.isCrawler = 0;
+b.isIE = 0;
+/* Debugging */
+b.debug = "";
+</script>
+
+
+<script type="text/javascript" src="js/b.l.js"></script>
+<script type="text/javascript" src="http://www.nssmag.com/translations.js"></script>
+
+</body>
+</html>
