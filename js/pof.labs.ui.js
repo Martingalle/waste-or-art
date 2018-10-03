@@ -36,7 +36,7 @@ pof.labs.ui.answer = function(answer)
   // Le mot "art" ou "fasion" apparait en grand
 	$('#'+answer+'-button, #'+pof.labs.ui.slides[pof.labs.ui.slide].answer.toLowerCase()).show();
 	// j'ajoute la réponse en photo avec le bon resultat
-  $('#game').css('background-image', 'url('+b.imagespath+'/photos/'+pof.labs.ui.slides[pof.labs.ui.slide].photo+')');
+  $('#game').css('background-image', 'url('+b.imagespath+'/images/'+pof.labs.ui.slides[pof.labs.ui.slide].photo+')');
 	// si la réponse est égale à la bonne réponse, alors je met le bouton Next et
   // je mets le timeout à 2,5 s au cas où la personne n'apui
   // sinon je fais faire le horn immonde, puis je set le timout pour le timeout
@@ -72,8 +72,8 @@ pof.labs.ui.next = function()
 	$('#game-buttons .button-answer').show();
 	$('#next').hide();
 	$('.result').hide();
-	$('#game').css('background-image', 'url('+b.imagespath+'/photos/'+pof.labs.ui.slides[pof.labs.ui.slide].covered+')');
-	$('#preloader').attr('src', b.imagespath+'/photos/'+pof.labs.ui.slides[pof.labs.ui.slide].photo);
+	$('#game').css('background-image', 'url('+b.imagespath+'/images/'+pof.labs.ui.slides[pof.labs.ui.slide].covered+')');
+	$('#preloader').attr('src', b.imagespath+'/images/'+pof.labs.ui.slides[pof.labs.ui.slide].photo);
 }
 
 pof.labs.ui.finish = function()
