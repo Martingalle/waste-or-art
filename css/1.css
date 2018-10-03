@@ -79,7 +79,7 @@ h1, h2 {
 	z-index: 2;
 }
 #game-wrapper.intro #game {
-	background-image: url('../img/duchamp0.png') !important;
+	background-image: url('../img/duchamp.jpg') !important;
 }
 
 #loader {
