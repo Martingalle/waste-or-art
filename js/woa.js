@@ -1,8 +1,8 @@
-jQuery.namespace('pof.labs.ui');
+jQuery.namespace('woa');
 
 
 
-pof.labs.ui.resize = function()
+woa.resize = function()
 {
 	$('#game-wrapper').css('height', $(window).height() + 'px');
 	$('#game').css('height', $(window).height() + 'px');
@@ -10,21 +10,21 @@ pof.labs.ui.resize = function()
 
 
 // on détermine les variables minuimum : le score, le numéro du slides, le nombre de slides ?
-pof.labs.ui.score = 0;
-pof.labs.ui.slide = -1;
-pof.labs.ui.slides = null;
+woa.score = 0;
+woa.slide = -1;
+woa.slides = null;
 
 
 // Je crée la fonction start
-pof.labs.ui.start = function()
+woa.start = function()
 {
 	$('#game-wrapper').removeClass('finished').removeClass('intro').addClass('started');
   //je lance le jeu
-	pof.labs.ui.next();
+	woa.next();
 }
 
 // Je détermine une fonction answer qui prend le paramètre "answer", soient "art" ou "waste"
-pof.labs.ui.answer = function(answer)
+woa.answer = function(answer)
 {
   // si la classe "Game Buttons" a déjà la classe Answer alors... on s'en va
 	if($('#game-buttons').hasClass('answered')) {
@@ -34,20 +34,20 @@ pof.labs.ui.answer = function(answer)
 	$('#game-buttons .button-answer').hide();
 
   // Le mot "art" ou "waste" apparait en grand
-	$('#'+answer+'-button, #cible, #'+pof.labs.ui.slides[pof.labs.ui.slide].answer.toLowerCase()).show();
+	$('#'+answer+'-button, #cible, #'+woa.slides[woa.slide].answer.toLowerCase()).show();
   // document.querySelector(#art-button, #art).show
 	// j'ajoute la réponse en photo avec le bon resultat
-  document.querySelector('#cible').innerHTML = `<a href=${pof.labs.ui.slides[pof.labs.ui.slide].cible} target="_blank">${pof.labs.ui.slides[pof.labs.ui.slide].name}</a>`
-  //pof.labs.ui.slides[pof.labs.ui.slide].cible.toLowerCase();
-  $('#game').css('background-image', 'url('+b.imagespath+'/images/'+pof.labs.ui.slides[pof.labs.ui.slide].photo+')');
+  document.querySelector('#cible').innerHTML = `<a href=${woa.slides[woa.slide].cible} target="_blank">${woa.slides[woa.slide].name}</a>`
+  //woa.slides[woa.slide].cible.toLowerCase();
+  $('#game').css('background-image', 'url('+b.imagespath+'/images/'+woa.slides[woa.slide].photo+')');
 	// si la réponse est égale à la bonne réponse, alors je met le bouton Next et
   // je mets le timeout à 2,5 s au cas où la personne n'apui
   // sinon je fais faire le horn immonde, puis je set le timout pour le timeout
-  if(answer.toUpperCase() == pof.labs.ui.slides[pof.labs.ui.slide].answer) {
+  if(answer.toUpperCase() == woa.slides[woa.slide].answer) {
 		$('.result').addClass('success').removeClass('failure');
-		pof.labs.ui.score = pof.labs.ui.score + 1;
+		woa.score = woa.score + 1;
 		$('#next').show();
-		// pof.labs.ui.nextTimeout = setTimeout('pof.labs.ui.next()', 2500);
+		// woa.nextTimeout = setTimeout('woa.next()', 2500);
 	} else {
 		$('.result').removeClass('success').addClass('failure');
     // joue horn si c'est faux
@@ -55,43 +55,43 @@ pof.labs.ui.answer = function(answer)
 		horn.src = b.assetspath+'/extensions/labs/sites/pof/audio/air-horn-2'+(b.isSafari || b.isIE ? '.mp3' : '.ogg');
 		horn.play();
     // 1,5 secondes de répis avant d'aller voir la fonction finish
-		pof.labs.ui.nextTimeout = setTimeout('pof.labs.ui.finish()', 1500);
+		woa.nextTimeout = setTimeout('woa.finish()', 1500);
 	}
 }
 
-pof.labs.ui.nextTimeout = null;
+woa.nextTimeout = null;
 
-pof.labs.ui.next = function()
+woa.next = function()
 {
-	if(pof.labs.ui.slide + 1 == pof.labs.ui.slides.length) {
-		pof.labs.ui.finish();
+	if(woa.slide + 1 == woa.slides.length) {
+		woa.finish();
 		return;
 	}
-	clearTimeout(pof.labs.ui.nextTimeout);
+	clearTimeout(woa.nextTimeout);
   // on fait avancer d'1 slide
-	pof.labs.ui.slide = pof.labs.ui.slide + 1;
-	$('#slide').html(pof.labs.ui.slide + 1);
+	woa.slide = woa.slide + 1;
+	$('#slide').html(woa.slide + 1);
 	$('#game-buttons').removeClass('answered');
 	$('#game-buttons .button-answer').show();
 	$('#next, #cible').hide();
 	$('.result').hide();
-	$('#game').css('background-image', 'url('+b.imagespath+'/images/'+pof.labs.ui.slides[pof.labs.ui.slide].covered+')');
-	$('#preloader').attr('src', b.imagespath+'/images/'+pof.labs.ui.slides[pof.labs.ui.slide].photo);
+	$('#game').css('background-image', 'url('+b.imagespath+'/images/'+woa.slides[woa.slide].covered+')');
+	$('#preloader').attr('src', b.imagespath+'/images/'+woa.slides[woa.slide].photo);
 }
 
-pof.labs.ui.finish = function()
+woa.finish = function()
 {
-	clearTimeout(pof.labs.ui.nextTimeout);
+	clearTimeout(woa.nextTimeout);
 	$('#loader').hide();
 	$('#game-wrapper').removeClass('started').removeClass('intro').addClass('finished');
-	if(pof.labs.ui.score == pof.labs.ui.slides.length) {
+	if(woa.score == woa.slides.length) {
 		$('#game').addClass('winner');
 	}
-	$('#score').html(pof.labs.ui.score);
+	$('#score').html(woa.score);
 	$('.score').hide();
-	if(pof.labs.ui.score <= Math.round(pof.labs.ui.slides.length * 0.3)) {
+	if(woa.score <= Math.round(woa.slides.length * 0.3)) {
 		$('#score-1').show();
-	} else if(pof.labs.ui.score <= Math.round(pof.labs.ui.slides.length * 0.7)) {
+	} else if(woa.score <= Math.round(woa.slides.length * 0.7)) {
 		$('#score-2').show();
 	} else {
 		$('#score-3').show();
@@ -105,19 +105,19 @@ pof.labs.ui.finish = function()
 }
 
 // la fonction restart, fait juste reloader la page pour recommencer
-pof.labs.ui.restart = function()
+woa.restart = function()
 {
 	window.location.reload();
 }
 
-pof.labs.ui.share = function(url)
+woa.share = function(url)
 {
 	window.open(url,'','width=500,height=300');
 }
 
 
 
-pof.labs.ui.shuffle = function(array)
+woa.shuffle = function(array)
 {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -132,8 +132,8 @@ pof.labs.ui.shuffle = function(array)
 
 $(document).ready(function()
 {
-	$(window).resize(pof.labs.ui.resize);
-	pof.labs.ui.resize();
+	$(window).resize(woa.resize);
+	woa.resize();
 
-	pof.labs.ui.slides = pof.labs.ui.shuffle(_preloadedSlides);
+	woa.slides = woa.shuffle(_preloadedSlides);
 });
