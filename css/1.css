@@ -14,14 +14,14 @@ body {
 }
 
 a, a:link, a:visited, a:active {
-	color: #C00;
+	color: white;
 	-webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
     text-decoration: none;
 }
 a:hover {
-	color: #C00;
+	color: #CCCC;
 	text-decoration: underline;
 }
 
@@ -164,11 +164,26 @@ h1, h2 {
 	text-align: center;
 	z-index: 6;
 }
+
 .result.success {
 	color: #0f0;
 }
 .result.failure {
 	color: #f00;
+}
+
+.cible {
+  width: 600px;
+  position: absolute;
+  top: 62%; left: 50%;
+  font-size: 40px; line-height: 120px;
+  margin: -60px 0 0 -300px;
+  color: white;
+  text-align: center;
+  z-index: 6;
+  a:link {
+    color: white;
+  }
 }
 
 #game-wrapper.finished #game {
