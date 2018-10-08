@@ -33,9 +33,12 @@ pof.labs.ui.answer = function(answer)
 	$('#game-buttons').addClass('answered');
 	$('#game-buttons .button-answer').hide();
 
-  // Le mot "art" ou "fasion" apparait en grand
-	$('#'+answer+'-button, #'+pof.labs.ui.slides[pof.labs.ui.slide].answer.toLowerCase()).show();
+  // Le mot "art" ou "waste" apparait en grand
+	$('#'+answer+'-button, #cible, #'+pof.labs.ui.slides[pof.labs.ui.slide].answer.toLowerCase()).show();
+  // document.querySelector(#art-button, #art).show
 	// j'ajoute la réponse en photo avec le bon resultat
+  document.querySelector('#cible').innerHTML = `<a href=${pof.labs.ui.slides[pof.labs.ui.slide].cible} target="_blank">${pof.labs.ui.slides[pof.labs.ui.slide].name}</a>`
+  //pof.labs.ui.slides[pof.labs.ui.slide].cible.toLowerCase();
   $('#game').css('background-image', 'url('+b.imagespath+'/images/'+pof.labs.ui.slides[pof.labs.ui.slide].photo+')');
 	// si la réponse est égale à la bonne réponse, alors je met le bouton Next et
   // je mets le timeout à 2,5 s au cas où la personne n'apui
@@ -51,8 +54,8 @@ pof.labs.ui.answer = function(answer)
 		var horn = new Audio();
 		horn.src = b.assetspath+'/extensions/labs/sites/pof/audio/air-horn-2'+(b.isSafari || b.isIE ? '.mp3' : '.ogg');
 		horn.play();
-    // 2,5 secondes de répis avant d'aller voir la fonction finish
-		pof.labs.ui.nextTimeout = setTimeout('pof.labs.ui.finish()', 2500);
+    // 1,5 secondes de répis avant d'aller voir la fonction finish
+		pof.labs.ui.nextTimeout = setTimeout('pof.labs.ui.finish()', 1500);
 	}
 }
 
@@ -70,7 +73,7 @@ pof.labs.ui.next = function()
 	$('#slide').html(pof.labs.ui.slide + 1);
 	$('#game-buttons').removeClass('answered');
 	$('#game-buttons .button-answer').show();
-	$('#next').hide();
+	$('#next, #cible').hide();
 	$('.result').hide();
 	$('#game').css('background-image', 'url('+b.imagespath+'/images/'+pof.labs.ui.slides[pof.labs.ui.slide].covered+')');
 	$('#preloader').attr('src', b.imagespath+'/images/'+pof.labs.ui.slides[pof.labs.ui.slide].photo);
