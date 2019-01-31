@@ -238,8 +238,8 @@ h1, h2 {
 
 .logo-share {
 	text-align: center;
-	/*padding-left: 60px;
-*/}
+/*	padding-left: 60px;*/
+}
 .logo-share > div, .logo-share > a {
 	display: inline-block;
 }
