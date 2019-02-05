@@ -54,8 +54,8 @@ woa.answer = function(answer)
 		var horn = new Audio();
 		horn.src = b.assetspath+'/extensions/labs/sites/pof/audio/air-horn-2'+(b.isSafari || b.isIE ? '.mp3' : '.ogg');
 		horn.play();
-    // 1,5 secondes de répis avant d'aller voir la fonction finish
-		woa.nextTimeout = setTimeout('woa.finish()', 1500);
+    // 3,5 secondes de répis avant d'aller voir la fonction finish
+		woa.nextTimeout = setTimeout('woa.finish()', 3500);
 	}
 }
 
