@@ -244,6 +244,8 @@ h1, h2 {
 .logo-share {
 	text-align: center;
 /*	padding-left: 60px;*/
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
 }
 .logo-share > div, .logo-share > a {
 	display: inline-block;

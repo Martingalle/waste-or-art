@@ -7,7 +7,7 @@
   <meta property="fb:app_id" content="323218128902" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://www.martindescours/fr/waste-or-art" />
+  <meta property="og:url" content="http://www.art-ou-dechets.fr/index.html" />
   <meta property="og:title" content="Art ou déchets - LE JEU" />
   <meta property="og:site_name" content="Art ou déchets - LE JEU" />
   <meta name="description" content="L'art devient de plus en plus étrange chaque jour... Saurez vous faire le tri entre l'art et votre poubelle ?" />
@@ -79,12 +79,47 @@
 			<a id="button-restart" href="javascript:woa.restart();" class="button">Réessayer!</a>
 			<div class="spacer" style="height:50px;"></div>
 			<h3 style="margin-bottom:20px;">Avez-vous apprécié ce quiz ? Un petit coup de pouce pour aimer notre page et partager ce jeu !</h3>
-			<div class="logo-share">
-				<div class="fb-like fb_iframe_widget" data-href="http://www.facebook.com/creativecommunication" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false" data-width="130"></div>
-				<div class="fb-share-button" data-href="http://www.martindescours/fr/waste-or-art" data-width="150" data-type="button_count"></div>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.martindescours/fr/waste-or-art" data-text="Waste or Art? Are you able to distinguish them?" data-via="mutum" data-hashtags="wasterorart">Tweet</a>
-				<a href="https://twitter.com/Mutum_FR" class="twitter-follow-button" data-show-count="false">Suivez @mutum</a>
-			</div>
+
+      <div class="logo-share">
+
+          <!-- <div id="fb-root"></div> -->
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+
+          <div class="fb-share-button"
+            data-href="http://www.art-ou-dechets.fr/index.html"
+            data-layout="button"
+            data-size="small"
+            data-mobile-iframe="true">
+            <a target="_blank"
+            href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.art-ou-dechets.fr%2Findex.html&amp;src=sdkpreparse"
+            class="fb-xfbml-parse-ignore">Partager</a>
+          </div>
+
+          <div class="fb-like" data-href="https://www.facebook.com/mutum.fr/" data-width="400" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false">
+
+          </div>
+
+          <div>
+            <a class="twitter-share-button"
+            href="https://twitter.com/intent/tweet?text=Hello%20world"
+            data-size="small">
+          Tweet</a>
+          </div>
+          <div>
+            <a href="https://twitter.com/Mutum_FR?ref_src=twsrc%5Etfw"
+              class="twitter-follow-button"
+              data-show-count="false">Follow @Mutum_fr</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+            </script>
+          </div>
+      </div>
+
 			<div class="spacer" style="height:50px;"></div>
 			<p>Réduisons nos déchets, rejoignez le mouvement ! <a href="http://jachetepasjemprunte.fr">jachetepasjemprunte.fr</a></p>
       <p>#PouvoirdEmprunt</p>
