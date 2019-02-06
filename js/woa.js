@@ -34,7 +34,7 @@ woa.answer = function(answer)
 	$('#game-buttons .button-answer').hide();
 
   // Le mot "art" ou "waste" apparait en grand
-	$('#'+answer+'-button, #cible, #'+woa.slides[woa.slide].answer.toLowerCase()).show();
+	$('#'+answer+'-button, #cible, #'+answer+'-finish, #'+woa.slides[woa.slide].answer.toLowerCase()).show();
   // document.querySelector(#art-button, #art).show
 	// j'ajoute la réponse en photo avec le bon resultat
   document.querySelector('#cible').innerHTML = `<a href=${woa.slides[woa.slide].cible} target="_blank">${woa.slides[woa.slide].name}</a>`
@@ -82,7 +82,7 @@ woa.next = function()
 	$('#slide').html(woa.slide + 1);
 	$('#game-buttons').removeClass('answered');
 	$('#game-buttons .button-answer').show();
-	$('#next, #cible').hide();
+	$('#next, #cible, #art-finish, #waste-finish').hide();
 	$('.result').hide();
 	$('#game').css('background-image', 'url('+b.imagespath+'/images/'+woa.slides[woa.slide].covered+')');
 	$('#preloader').attr('src', b.imagespath+'/images/'+woa.slides[woa.slide].photo);
