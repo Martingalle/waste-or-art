@@ -45,15 +45,22 @@ woa.answer = function(answer)
   // sinon je fais faire le horn immonde, puis je set le timout pour le timeout
   if(answer.toUpperCase() == woa.slides[woa.slide].answer) {
 		$('.result').addClass('success').removeClass('failure');
+    var horn = new Audio();
+    horn.src = 'http://www.pacdv.com/sounds/voices/woohoo.wav';
+    horn.play();
 		woa.score = woa.score + 1;
 		$('#next').show();
 		// woa.nextTimeout = setTimeout('woa.next()', 2500);
 	} else {
 		$('.result').removeClass('success').addClass('failure');
     // joue horn si c'est faux
-		var horn = new Audio();
-		horn.src = b.assetspath+'/extensions/labs/sites/pof/audio/air-horn-2'+(b.isSafari || b.isIE ? '.mp3' : '.ogg');
-		horn.play();
+		// var horn = new Audio();
+		// horn.src = b.assetspath+'/extensions/labs/sites/pof/audio/air-horn-2'+(b.isSafari || b.isIE ? '.mp3' : '.ogg');
+		// horn.play();
+    var horn = new Audio();
+    // horn.src = b.assetspath+'/extensions/labs/sites/pof/audio/air-horn-2'+(b.isSafari || b.isIE ? '.mp3' : '.ogg');
+    horn.src = 'http://www.arts-ou-dechets.fr/images/wrong-buzzer.ogg'
+    horn.play();
     // 3,5 secondes de répis avant d'aller voir la fonction finish
 		// woa.nextTimeout = setTimeout('woa.finish()', 2500);
     woa.score = woa.score;
