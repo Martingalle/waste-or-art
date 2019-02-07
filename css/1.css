@@ -42,6 +42,7 @@ h1, h2 {
 	font-size: 19px; line-height: 19px;
 	text-align: center;
 }
+
 .button:hover {
 	box-shadow: inset 0 -50px 0 #f00; -moz-box-shadow: inset 0 -50px 0 #f00; -webkit-box-shadow: inset 0 -50px 0 #f00;
 	color: #fff !important;
@@ -170,11 +171,26 @@ h1, h2 {
 	z-index: 6;
 }
 
+#waste-finish, #art-finish {
+  background: #428bca;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
 .result.success {
 	color: #0f0;
 }
 .result.failure {
 	color: #f00;
+}
+
+.jachetepasjemprunte a {
+  color : #c00 !important;
+  }
+
+.jachetepasjemprunte a:active {
+  color : #c00 !important;
 }
 
 .cible {
