@@ -30,60 +30,62 @@ woa.answer = function(answer)
 	if($('#game-buttons').hasClass('answered')) {
 		return;
 	}
-	$('#game-buttons').addClass('answered');
+	//ajoute une classe à game-buttons pour changer le css des 2 boutons de réponse
+  $('#game-buttons').addClass('answered');
+  // on chache les classes des 2 boutons de réponses
 	$('#game-buttons .button-answer').hide();
+  // on fait apparaitre
+  // 1 le bon bouton de réponse (caché juste avant)
+  // 2 le bouton next, la div de lien sur l'image, le bouton finish
+  // 4 le mot "art" ou "waste" en grand + bandeau de soulignement
+	$('#'+answer+'-button, #next, #cible, #'+answer+'-finish, #'+woa.slides[woa.slide].answer.toLowerCase()).show();
 
-  // Le mot "art" ou "waste" apparait en grand
-	$('#'+answer+'-button, #cible, #'+answer+'-finish, #'+woa.slides[woa.slide].answer.toLowerCase()).show();
-  // document.querySelector(#art-button, #art).show
-	// j'ajoute la réponse en photo avec le bon resultat
+	// j'ajoute le lien sous la photo
   document.querySelector('#cible').innerHTML = `<a href=${woa.slides[woa.slide].cible} target="_blank">${woa.slides[woa.slide].name}</a>`
-  //woa.slides[woa.slide].cible.toLowerCase();
+  // j'ajoute la photo de réponse en entieren css
   $('#game').css('background-image', 'url('+b.imagespath+'/images/'+woa.slides[woa.slide].photo+')');
-	// si la réponse est égale à la bonne réponse, alors je met le bouton Next et
+	// si la réponse est la bonne, alors je fais apparaitre le bouton Next et
   // je mets le timeout à 2,5 s au cas où la personne n'apui
   // sinon je fais faire le horn immonde, puis je set le timout pour le timeout
   if(answer.toUpperCase() == woa.slides[woa.slide].answer) {
+    //je donne la couleur à la div result (vert ou rouge)
 		$('.result').addClass('success').removeClass('failure');
     var horn = new Audio();
     horn.src = 'http://www.pacdv.com/sounds/voices/woohoo.wav';
     horn.play();
 		woa.score = woa.score + 1;
-		$('#next').show();
-		// woa.nextTimeout = setTimeout('woa.next()', 2500);
+		// Timeout pour prochaine image, woa.nextTimeout = setTimeout('woa.next()', 2500);
 	} else {
+    //je donne la couleur à la div result (vert ou rouge)
 		$('.result').removeClass('success').addClass('failure');
-    // joue horn si c'est faux
-		// var horn = new Audio();
-		// horn.src = b.assetspath+'/extensions/labs/sites/pof/audio/air-horn-2'+(b.isSafari || b.isIE ? '.mp3' : '.ogg');
-		// horn.play();
     var horn = new Audio();
-    // horn.src = b.assetspath+'/extensions/labs/sites/pof/audio/air-horn-2'+(b.isSafari || b.isIE ? '.mp3' : '.ogg');
     horn.src = 'images/wrong-buzzer.ogg'
     horn.play();
     // 3,5 secondes de répis avant d'aller voir la fonction finish
-		// woa.nextTimeout = setTimeout('woa.finish()', 2500);
+		// Timeout pour prochaine image, woa.nextTimeout = setTimeout('woa.next()', 2500);
     woa.score = woa.score;
-    $('#next').show();
 	}
 }
 
 woa.nextTimeout = null;
 
+//fonctionnnement de la fonction next
 woa.next = function()
 {
+  // si le slide est egal au nombre d'images, alors on va vers la fonction finish
 	if(woa.slide + 1 == woa.slides.length) {
 		woa.finish();
 		return;
 	}
 	clearTimeout(woa.nextTimeout);
-  // on fait avancer d'1 slide
+  // sinon on fait avancer d'1 slide
 	woa.slide = woa.slide + 1;
 	$('#slide').html(woa.slide + 1);
 	$('#game-buttons').removeClass('answered');
 	$('#game-buttons .button-answer').show();
 	$('#next, #cible, #art-finish, #waste-finish').hide();
 	$('.result').hide();
+  // l'image de fond change et redevient l'image avec un seul element montré
 	$('#game').css('background-image', 'url('+b.imagespath+'/images/'+woa.slides[woa.slide].covered+')');
 	$('#preloader').attr('src', b.imagespath+'/images/'+woa.slides[woa.slide].photo);
 }

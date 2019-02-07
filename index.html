@@ -65,7 +65,7 @@
 		<div id="logo-before-start">
 			<h3>Saurez-vous distinguer l'art du déchet ?</h3>
       <br>
-      <h5>(clickez sur les sous-titres pour en savior plus !)</h5>
+      <h5>(clickez sur les sous-titres pour en savoir plus !)</h5>
 			<a id="button-start" href="javascript:woa.start();" class="button">J'essaie !</a>
 			<div class="spacer" style="height:40px;"></div>
 			<p style="color:#999"><strong>DISCLAIMER</strong>&nbsp;Nous ne détenons aucun droit sur ces images,<strong><br>nous les avons trouvées sur l'Internet !</strong>.</p>
@@ -123,24 +123,25 @@
       </div>
 
 			<div class="spacer" style="height:50px;"></div>
-			<p>Réduisons nos déchets, rejoignez le mouvement ! <a href="http://jachetepasjemprunte.fr">jachetepasjemprunte.fr</a></p>
+			<p class="jachetepasjemprunte">Réduisons nos déchets, rejoignez le mouvement ! <a href="http://jachetepasjemprunte.fr">jachetepasjemprunte.fr</a></p>
       <p>#PouvoirdEmprunt</p>
 			<div class="clearfix"></div>
 		</div>
 	</div>
 
 	<div id="game">
-
+    <!-- Ce sont les mots de résultats + lien -->
 		<h1 id="art" class="result" style="display:none;">Art</h1>
 		<h1 id="waste" class="result" style="display:none;">Déchets</h1>
     <h2 id="cible" class="cible" style="display:none;">cible</h1>
 
-		<div id="game-buttons">
+    <!-- Ce sont les boutons pour jouer -->
+    <div id="game-buttons">
 			<a id="art-button" href="javascript:woa.answer('art');" class="button button-answer pull-left">
 				Art
 			</a>
-      <a id="waste-finish" href="javascript:woa.finish();" class="button button-answer pull-left" style="display:none;">
-        Finish
+      <a id="waste-finish" href="javascript:woa.finish();" class="button button-answer pull-left" style="display:none; background: #428bca">
+        Finir le quiz
       </a>
 			<a id="next" href="javascript:woa.next();" class="button pull-left" style="display:none;">
 				Suivant
@@ -148,8 +149,8 @@
 			<a id="waste-button" href="javascript:woa.answer('waste');" class="button button-answer pull-right">
 				Déchets
 			</a>
-      <a id="art-finish" href="javascript:woa.finish();" class="button button-answer pull-right" style="display:none;">
-        Finish
+      <a id="art-finish" href="javascript:woa.finish();" class="button button-answer pull-right" style="display:none; background: #428bca">
+        Finir le quiz
       </a>
 
 			<div class="counter">
