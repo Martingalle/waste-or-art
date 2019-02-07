@@ -93,7 +93,7 @@ h1, h2 {
 	position: absolute;
 	top: 0; left: 0;
 	z-index: 1;
-	background: url('../images/ajax-loader.gif') center center no-repeat #fff;
+	/*background: url('../images/ajax-loader.gif') center center no-repeat #fff;*/
 }
 
 #logo {
